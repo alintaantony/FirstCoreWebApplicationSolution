@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FirstCoreWebApplicationProject.Models.MovieDetails>
+
+@{
+    ViewData["Title"] = "ViewMovies";
+}
+
+<h1>View Movies</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieGenre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieGenre)
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<nav>
+    @Html.ActionLink("Add Movie", "AddMovie") | 
+     
+    @Html.ActionLink("Edit Movie Genre", "EditMovie") | 
+
+    @Html.ActionLink("Delete Movie Genre", "DeleteMovie") | 
+</nav>

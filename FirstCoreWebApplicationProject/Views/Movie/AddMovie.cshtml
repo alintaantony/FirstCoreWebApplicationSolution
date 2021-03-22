@@ -1,0 +1,42 @@
+﻿@model FirstCoreWebApplicationProject.Models.MovieDetails
+
+@{
+    ViewData["Title"] = "AddMovie";
+}
+
+<h1>Add Movie</h1>
+
+<h4>Movie Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddMovie">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MovieName" class="control-label"></label>
+                <input asp-for="MovieName" class="form-control" />
+                <span asp-validation-for="MovieName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieGenre" class="control-label"></label>
+                <input asp-for="MovieGenre" class="form-control" />
+                <span asp-validation-for="MovieGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Movie" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewMovies">View Movies</a>
+</div>
+<br />
+<div>
+    @ViewBag.Message
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
