@@ -12,7 +12,8 @@ namespace FirstCoreWebApplicationProject.Models
         {
             moviesList = new List<MovieDetails>()
             {
-                new MovieDetails() { MovieName = "Forrest Gump", MovieGenre = "Drama" }
+                new MovieDetails() { MovieName = "Forrest Gump", MovieGenre = "Drama" },
+                new MovieDetails() { MovieName = "Saw", MovieGenre = "Thriller" }
             };
         }
         
